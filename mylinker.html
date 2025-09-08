@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BriBec Industries — Links</title>
+  <meta name="description" content="BriBec Industries — simple landing page to our shop and links." />
+  <meta property="og:title" content="BriBec Industries" />
+  <meta property="og:description" content="Handpicked, handmade, and curated goods. Find all our links here." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#111111" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #d3d9d8;
+      --fg: #0b0b0c;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --ring: rgba(17, 24, 39, .12);
+      --accent: #111827;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0b0c; --fg:#f6f7fb; --muted:#9ca3af; --card:#141416; --ring:rgba(255,255,255,.12); --accent:#f6f7fb; }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.55;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 32px 16px;
+    }
+    .wrap{ width: 100%; max-width: 720px; }
+    .card{
+      background: var(--card);
+      border-radius: 24px;
+      box-shadow: 0 1px 2px var(--ring), 0 12px 40px var(--ring);
+      padding: clamp(20px, 3vw, 40px);
+    }
+    .brand{
+      display:flex; align-items:center; gap: 16px; justify-content:center; text-align:center;
+      flex-direction: column;
+    }
+    .logo{
+      width: 240px; height: 240px; object-fit: contain;
+      filter: drop-shadow(0 2px 8px var(--ring));
+      background: transparent;
+    }
+    h1{ font-size: clamp(26px, 4vw, 36px); margin: 8px 0 0; letter-spacing: 0.02em; font-weight:600; }
+    .tag{ color: var(--muted); margin-top: 4px; font-size: 1rem; }
+
+    .links{ display:grid; grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
+    @media (min-width: 560px){ .links{ grid-template-columns: 1fr 1fr; } }
+
+    .btn{
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      padding: 14px 18px; border-radius: 14px; text-decoration:none; font-weight:600;
+      border: 1px solid var(--ring); background: var(--card); color: var(--fg);
+      transition: transform .08s ease, box-shadow .12s ease, border-color .12s ease;
+      box-shadow: 0 1px 2px var(--ring);
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: var(--accent); box-shadow: 0 10px 30px var(--ring); }
+    .btn:focus-visible{ outline: 3px solid var(--accent); outline-offset: 2px; }
+    .btn.primary{ background: var(--fg); color: var(--bg); }
+
+   .btn img.icon{
+	   height: 50%; width: 50%; object-fit: contain;
+   }
+
+    .grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 16px; }
+    .chip{
+      padding: 10px 12px; border-radius: 999px; background: var(--bg); color: var(--muted); text-align:center; border:1px solid var(--ring);
+      font-size:.9rem;
+    }
+
+    footer{ margin-top: 22px; color: var(--muted); font-size: .9rem; text-align:center; }
+
+    .hero{ margin-top: 18px; font-size: 1.05rem; text-align:center; color: var(--muted); }
+
+    @media (prefers-reduced-motion: reduce){
+      .btn{ transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <header class="brand">
+        <!-- Inline the uploaded logo path -->
+        <img class="logo" src="img/logo.png" alt="BriBec Industries logo" />
+        <div>
+		<!-- <h1>BriBec Industries</h1> -->
+          <div class="tag">Vintage • Small‑batch finds</div>
+        </div>
+      </header>
+
+      <p class="hero">A simple hub for our links. Tap a button to shop or connect.</p>
+
+      <nav class="links" aria-label="Primary">
+	<a class="btn" href="https://www.etsy.com/shop/BriBecIndustries" target="_blank" rel="noopener"><img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Etsy_logo.svg" alt="Etsy logo" /></a>
+	<a class="btn" href="https://www.instagram.com/bribecdecor/" target="_blank" rel="noopener"><img class="icon" src="img/instagram-logo.png"/></a>
+	<a class="btn" href="https://pinterest.com" target="_blank" rel="noopener"><img class="icon" src="img/pinterest-icon.png"/></a>
+	<a class="btn" href="https://poshmark.com/closet/becky5733" target="_blank" rel="noopener"><img class="icon" src="img/poshmark-icon.png"/></a>
+      </nav>
+
+      <footer>
+        © <span id="y"></span> BriBec Industries · Built with ♥
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
