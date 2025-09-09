@@ -49,11 +49,16 @@
       display:flex; align-items:center; gap: 16px; justify-content:center; text-align:center;
       flex-direction: column;
     }
+
     .logo{
-      width: 240px; height: auto; object-fit: contain;
+      max-width: 240px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
       filter: drop-shadow(0 2px 8px var(--ring));
       background: transparent;
     }
+
     h1{ font-size: clamp(26px, 4vw, 36px); margin: 8px 0 0; letter-spacing: 0.02em; font-weight:600; }
     .tag{ color: var(--muted); margin-top: 4px; font-size: 1rem; }
 
