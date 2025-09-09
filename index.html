@@ -33,7 +33,7 @@
       background: var(--bg);
       color: var(--fg);
       line-height: 1.55;
-      display:flex;
+      display:block;
       align-items:center;
       justify-content:center;
       padding: 32px 16px;
@@ -93,6 +93,19 @@
     @media (prefers-reduced-motion: reduce){
       .btn{ transition: none; }
     }
+
+    /* Mobile specific tweaks */
+    @media (max-width: 600px) {
+	    .logo {
+		    max-width: 80vw;  /* scale logo smaller on narrow screens */
+                    margin-top: 8px;  /* add vertical spacing to avoid cropping */
+		    /* optionally increase padding on container */
+	    }
+	    .logo-container {
+		    padding-top: 20px; /* more space on top for mobile shadows */
+	    }
+    }
+
   </style>
   <!-- END of STYLE -->
 </head>
